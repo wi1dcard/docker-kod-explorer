@@ -10,6 +10,8 @@ Create and start containers:
 $ docker-compose up
 ```
 
+Then open <http://localhost:4000/> in your browser. You will see the welcome page of KodExplorer.
+
 Get information about the data volume:
 
 ```bash
