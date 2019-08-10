@@ -1,0 +1,20 @@
+version: "3.7"
+volumes:
+  app:
+  data:
+    name: my-kod-explorer-data
+services:
+  php:
+    build:
+      context: .
+    volumes: &volumes
+      - app:/var/www/html
+      - data:/var/www/html/data
+  nginx:
+    build:
+      context: nginx
+    volumes: *volumes
+    ports:
+      - 4000:80
+    environment:
+      FASTCGI_PASS: php:9000
